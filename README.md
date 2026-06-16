@@ -192,5 +192,5 @@ Potential recommendations:
 
 **Henikaja Andriamahay IRIMANANA**
 
-MSc Artificial Intelligence with Machine Learning
+MSc Artificial Intelligence with Machine Learning <br\>
 Front-End Developer & Data Analytics Enthusiast
