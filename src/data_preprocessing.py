@@ -16,3 +16,7 @@ def preprocess_data(file_path):
     df[numerical_cols] = (df[numerical_cols] - df[numerical_cols].min()) / (df[numerical_cols].max() - df[numerical_cols].min())
 
     return df
+
+if __name__ == "__main__":    # Example usage
+    processed_data = preprocess_data('data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv')
+    print(processed_data.head())
