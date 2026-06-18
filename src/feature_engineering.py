@@ -11,3 +11,12 @@ def feature_engineering(df):
     df['TotalCharges'] = df['MonthlyCharges'] * df['tenure']
     df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
     return df
+
+if __name__ == "__main__":    # Example usage
+    # Load the dataset
+    df = pd.read_csv('data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv')
+    
+    # Perform feature engineering
+    df = feature_engineering(df)
+    
+    print(df.head())
