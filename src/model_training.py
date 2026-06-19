@@ -71,7 +71,7 @@ def train_model_random_forest(df, target_column):
     # Plot ROC curve
     fpr, tpr, _ = roc_curve(y_test, y_pred_proba)
     
-    return model, fpr, tpr, auc_score
+    return model, fpr, tpr, auc_score    
 
 if __name__ == "__main__":    # Example usage
     # Load the preprocessed dataset
