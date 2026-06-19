@@ -39,7 +39,7 @@ def train_model_logistic_regression(df, target_column):
     return model, fpr, tpr, auc_score
 
 
-def train_model(df, target_column):
+def train_model_random_forest(df, target_column):
     """Train a machine learning model on the dataset."""
     # Split the dataset into features and target variable
     X = df.drop(columns=[target_column])
@@ -78,6 +78,6 @@ if __name__ == "__main__":    # Example usage
     df = pd.read_csv('data/processed/processed_data.csv')
     
     # Train the model and evaluate
-    model, fpr, tpr, auc_score = train_model(df, target_column='Churn')
+    model, fpr, tpr, auc_score = train_model_random_forest(df, target_column='Churn')
     
     print(f"Model trained. ROC AUC Score: {auc_score:.2f}")
