@@ -14,3 +14,8 @@ GROUP BY contract, gender;
 SELECT contract, payment_method, COUNT(*) AS total_customers, SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers, SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) AS churn_rate
 FROM churnsense
 GROUP BY contract, payment_method;
+
+-- Churn rate by contract type and internet service
+SELECT contract, internet_service, COUNT(*) AS total_customers, SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers, SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) AS churn_rate
+FROM churnsense
+GROUP BY contract, internet_service;
