@@ -82,11 +82,21 @@ def train_model(df, target_column, model_type='logistic_regression'):
     else:
         raise ValueError(f"Unsupported model type: {model_type}")
 
+def save_model(model, model_type='logistic_regression'):
+    """Save the trained model to a file."""
+    if model_type == 'logistic_regression':
+        model.save('models/logistic_regression_model.joblib')
+    elif model_type == 'random_forest':
+        model.save('models/random_forest_model.joblib')
+    else:
+        raise ValueError(f"Unsupported model type: {model_type}")
+
 if __name__ == "__main__":    # Example usage
     # Load the preprocessed dataset
     df = pd.read_csv('data/processed/processed_data.csv')
     
     # Train the model and evaluate
-    model, fpr, tpr, auc_score = train_model_random_forest(df, target_column='Churn')
+    model, fpr, tpr, auc_score = train_model(df, target_column='Churn', model_type='random_forest')
     
     print(f"Model trained. ROC AUC Score: {auc_score:.2f}")
+    save_model(model, model_type='random_forest')
