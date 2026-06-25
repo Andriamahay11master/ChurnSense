@@ -73,6 +73,15 @@ def train_model_random_forest(df, target_column):
     
     return model, fpr, tpr, auc_score    
 
+def train_model(df, target_column, model_type='logistic_regression'):
+    """Train a machine learning model on the dataset."""
+    if model_type == 'logistic_regression':
+        return train_model_logistic_regression(df, target_column)
+    elif model_type == 'random_forest':
+        return train_model_random_forest(df, target_column)
+    else:
+        raise ValueError(f"Unsupported model type: {model_type}")
+
 if __name__ == "__main__":    # Example usage
     # Load the preprocessed dataset
     df = pd.read_csv('data/processed/processed_data.csv')
