@@ -183,7 +183,7 @@ Potential recommendations:
 
 # Future Improvements
 
-- Deploy a churn prediction web application.
+- Deploy a churn prediction web application (React app).
 - Integrate real-time customer monitoring.
 - Implement automated churn alerts.
 - Compare additional machine learning models such as XGBoost and LightGBM.
